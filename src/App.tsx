@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { io } from "socket.io-client";
 import './App.css';
+import GameSession from './components/GameSession/GameSession';
 
 function App() {
+
+  const [players, setPlayers] = useState<string[]>([]);
+  const [selectedDecks, setSelectedDecks] = useState<string[]>([]);
+  const [optionsFinalised, setOptionsFinalised] = useState<boolean>(false);
+
+  const socket = io("http://localhost:3000");
+  socket.emit("log_message", "working");
+
+  useEffect(() => {
+    setPlayers(['Anika', 'Seb', 'Jasmine']);
+    setSelectedDecks(['original', 'imploding', 'streaking']);
+  }, []);
+
+  useEffect(() => {
+    if (players.length > 0 && selectedDecks.length > 0) {
+      setOptionsFinalised(true);
+    }
+  }, [selectedDecks, players]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {optionsFinalised && <GameSession sessionPlayers={players} sessionDecks={selectedDecks} />}
     </div>
   );
 }

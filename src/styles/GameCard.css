@@ -1,0 +1,42 @@
+.GameCardWrapper {
+   position: relative;
+}
+
+.GameCardContainerFront {
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 120px;
+    position: absolute;
+}
+
+.GameCardContainerBack {
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 120px;
+    position: absolute;
+}
+
+.GameCardBack {
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    width: 60px;
+    height: 100px;
+    margin: 10px;
+}
+
+.GameCardContent {
+    margin: 10px;
+    background-color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 60px;
+    height: 100px;
+}

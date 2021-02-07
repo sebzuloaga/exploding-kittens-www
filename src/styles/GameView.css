@@ -1,0 +1,50 @@
+.GameViewMain {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.PlayerHands {
+    width: 60%;
+    height: 100%;
+}
+
+.PlayerHand {
+    width: 100%;
+    height: 33.33%;
+}
+
+.HandContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.PlayingBoard {
+    width: 40%;
+    height: 100%;
+}
+
+.CardDeck, .CardCombinator {
+    width: 100%;
+    height: 50%
+}
+
+.CardDeck {
+    display: flex;
+    justify-content: center;
+}
+
+.Deck, .DiscardPile {
+    height: 80%;
+    width: 40%;
+    border: dashed black 2px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+
